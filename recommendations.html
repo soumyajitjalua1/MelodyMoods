@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>MelodyMoods</h1>
+    </div>
+    <div class="Weather">
+        <h2 class="first-heading">Weather Info for {{ weather_info.city }}</h2>
+        <p>Temperature: {{ weather_info.temperature }} °C</p>
+        <p>Condition: {{ weather_info.condition }}</p>
+    </div>
+
+    
+    <h2>Weather-Based Songs</h2>
+    <div class="songs">
+        {% for song in weather_based_songs %}
+        <div class="song">
+            <h3>{{ song.name }}</h3>
+            <p>Artists: {{ song.artists | join(', ') }}</p>
+            <button class="btn">
+                <a href="{{ song.spotify_link }}" target="_blank">Listen on Spotify</a>
+            </button>
+            {% if song.youtube_id %}
+            <div class="youtube-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ song.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            {% else %}
+            <p>YouTube video not available</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Best Songs by Singer</h2>
+    <div class="songs">
+        {% for song in best_songs %}
+        <div class="song">
+            <h3>{{ song.name }}</h3>
+            <p>Artists: {{ song.artists | join(', ') }}</p>
+            <button class="btn">
+                <a href="{{ song.spotify_link }}" target="_blank">Listen on Spotify</a>
+            </button>
+            {% if song.youtube_id %}
+            <div class="youtube-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ song.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            {% else %}
+            <p>YouTube video not available</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Recommended Songs</h2>
+    <div class="songs">
+        {% for song in recommended_songs %}
+        <div class="song">
+            <h3>{{ song.name }}</h3>
+            <p>Artists: {{ song.artists | join(', ') }}</p>
+            <button class="btn">
+                <a href="{{ song.spotify_link }}" target="_blank">Listen on Spotify</a>
+            </button>
+            {% if song.youtube_id %}
+            <div class="youtube-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ song.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            {% else %}
+            <p>YouTube video not available</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
