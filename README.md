@@ -55,6 +55,8 @@ The Weather-Based Music Recommendation System is a Flask-based web application t
 
 6. **Visit the app in your browser**:
    Open `http://127.0.0.1:5000/` in your browser to start using the app.
+   see the demo of the websites[https://github.com/soumyajitjalua1/MelodyMoods/blob/main/website%20view.mp4]
+
 
 ## Usage
 
