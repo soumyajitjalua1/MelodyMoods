@@ -1,0 +1,128 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login container styling */
+.login-container {
+    max-width: 500px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+/* Heading styling */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form label styling */
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Form input styling */
+input[type="text"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Submit button styling */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Animation container */
+.animation-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+/* Dancing boy animation */
+.dancing-boy {
+    width: 100px;
+    height: 100px;
+    background-image: url('dancing-boy.png'); /* Add an image of a dancing boy */
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: dance 1s infinite;
+}
+
+/* Animation keyframes */
+@keyframes dance {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Heading fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
